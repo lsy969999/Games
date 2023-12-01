@@ -1,0 +1,22 @@
+{
+  "hosting": [
+    {
+      "target": "page1",
+      "public": "dist/page1",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "target": "page2",
+      "public": "dist/page2",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+  ]
+}
