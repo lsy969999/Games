@@ -17,6 +17,24 @@
         "**/.*",
         "**/node_modules/**"
       ]
+    },
+    {
+      "target": "dev-raising-lovee",
+      "public": "dist/dev-raising-lovee",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "target": "raising-lovee",
+      "public": "dist/raising-lovee",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
     }
   ]
 }
