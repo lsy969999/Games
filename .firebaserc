@@ -5,17 +5,14 @@
   "targets": {
     "games-e8218": {
       "hosting": {
-        "page2": [
-          "lsy-test-page-2"
-        ],
-        "page1": [
-          "lsy-test-page-1"
-        ],
         "dev-raising-lovee": [
           "dev-raising-lovee"
         ],
         "raising-lovee": [
           "raising-lovee"
+        ],
+        "lsy-test": [
+          "lsy-test"
         ]
       }
     }

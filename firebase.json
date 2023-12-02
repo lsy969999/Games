@@ -1,17 +1,8 @@
 {
   "hosting": [
     {
-      "target": "page1",
-      "public": "dist/page1",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ]
-    },
-    {
-      "target": "page2",
-      "public": "dist/page2",
+      "target": "lsy-test",
+      "public": "dist/lsy-test",
       "ignore": [
         "firebase.json",
         "**/.*",
