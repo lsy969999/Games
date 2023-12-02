@@ -1,18 +1,13 @@
-// webpack.config.js
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const { merge } = require('webpack-merge');
 
-module.exports = {
-  entry: {
-    "lsy-test": './src/pages/lsy-test/index.ts',
-    "dev-raising-lovee": './src/pages/dev-raising-lovee/index.ts',
-    "raising-lovee": './src/pages/raising-lovee/index.ts',
-  },
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-  },
+// 프로젝트 목록
+const projects = ['lsy-test', 'dev-raising-lovee', 'raising-lovee'];
+
+// 공통 설정
+const commonConfig = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
   },
@@ -43,27 +38,35 @@ module.exports = {
       },
     ],
   },
+};
+
+// 개별 프로젝트의 설정
+const projectConfigs = projects.map((project) => ({
+  entry: {
+    [project]: `./src/pages/${project}/index.ts`,
+  },
+  output: {
+    filename: `${project}.bundle.js`,
+    path: path.resolve(__dirname, `dist/${project}`),
+    publicPath: '/',
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/pages/lsy-test/index.html',
-      filename: 'lsy-test/index.html',
-      chunks: ['lsy-test'],
-    }),
-    new HtmlWebpackPlugin({
-      template: 'src/pages/dev-raising-lovee/index.html',
-      filename: 'dev-raising-lovee/index.html',
-      chunks: ['dev-raising-lovee'],
-    }),
-    new HtmlWebpackPlugin({
-      template: 'src/pages/raising-lovee/index.html',
-      filename: 'raising-lovee/index.html',
-      chunks: ['raising-lovee'],
+      template: `src/pages/${project}/index.html`,
+      filename: `index.html`,
+      chunks: [project],
     }),
   ],
   devServer: {
-    static: path.join(__dirname, 'dist'),
+    static: path.resolve(__dirname, `dist/${project}`),
     compress: true,
-    port: 9000,
+    // port: 9000, // 각각의 프로젝트에 대해 다른 포트를 사용하도록 설정
     hot: true,
+    historyApiFallback: true,
   },
-};
+}));
+
+// webpack-merge를 사용하여 공통 설정과 개별 프로젝트 설정을 병합
+const configs = projectConfigs.map((config) => merge(commonConfig, config));
+
+module.exports = configs;
