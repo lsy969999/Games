@@ -1,7 +1,7 @@
 # Games
 webpack-js project  
 render: pixijs  
-data: dexiejs  
+data: idb  
 i18n: i18next  
 need test lib(jest)  
 need polyfill(babel)  

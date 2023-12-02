@@ -4,8 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    page1: './src/pages/page1/index.ts',
-    page2: './src/pages/page2/index.ts',
+    "lsy-test": './src/pages/lsy-test/index.ts',
     "dev-raising-lovee": './src/pages/dev-raising-lovee/index.ts',
     "raising-lovee": './src/pages/raising-lovee/index.ts',
   },
@@ -45,14 +44,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/pages/page1/index.html',
-      filename: 'page1/index.html',
-      chunks: ['page1'],
-    }),
-    new HtmlWebpackPlugin({
-      template: 'src/pages/page2/index.html',
-      filename: 'page2/index.html',
-      chunks: ['page2'],
+      template: 'src/pages/lsy-test/index.html',
+      filename: 'lsy-test/index.html',
+      chunks: ['lsy-test'],
     }),
     new HtmlWebpackPlugin({
       template: 'src/pages/dev-raising-lovee/index.html',
