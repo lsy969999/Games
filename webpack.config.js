@@ -6,6 +6,8 @@ module.exports = {
   entry: {
     page1: './src/pages/page1/index.ts',
     page2: './src/pages/page2/index.ts',
+    "dev-raising-lovee": './src/pages/dev-raising-lovee/index.ts',
+    "raising-lovee": './src/pages/raising-lovee/index.ts',
   },
   output: {
     filename: '[name].bundle.js',
@@ -51,6 +53,16 @@ module.exports = {
       template: 'src/pages/page2/index.html',
       filename: 'page2/index.html',
       chunks: ['page2'],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/pages/dev-raising-lovee/index.html',
+      filename: 'dev-raising-lovee/index.html',
+      chunks: ['dev-raising-lovee'],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/pages/raising-lovee/index.html',
+      filename: 'raising-lovee/index.html',
+      chunks: ['raising-lovee'],
     }),
   ],
   devServer: {
