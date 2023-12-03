@@ -18,5 +18,5 @@ bunny.y = app.screen.height / 2
 app.stage.addChild(bunny)
 
 app.ticker.add((delta)=>{
-  bunny.rotation += 0.1 * delta
+  bunny.rotation += 0.0001 * delta
 })
