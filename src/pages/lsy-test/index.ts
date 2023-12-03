@@ -1,12 +1,13 @@
 import './styles.scss'
 
 import * as PIXI from 'pixi.js';
+// import sampleImage from './sample';
+import sampleImage from './sample.png'
 
 const app = new PIXI.Application<HTMLCanvasElement>({
     background: '#1099bb',
     resizeTo: window,
 });
-
 document.body.appendChild(app.view);
 
 const basicText = new PIXI.Text('Basic text in pixi1');
@@ -67,3 +68,7 @@ function onDragEnd() {
         dragTarget = null;
     }
 }
+
+
+let sprite = PIXI.Sprite.from(sampleImage);
+app.stage.addChild(sprite);

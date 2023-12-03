@@ -4,7 +4,11 @@ const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 
 // 프로젝트 목록
-const projects = ['lsy-test', 'dev-raising-lovee', 'raising-lovee'];
+const projects = [
+  'lsy-test',
+  // 'dev-raising-lovee',
+  // 'raising-lovee'
+];
 
 // 공통 설정
 const commonConfig = {
@@ -34,6 +38,18 @@ const commonConfig = {
           'style-loader',
           'css-loader',
           'sass-loader',
+        ],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images', // 이미지를 저장할 폴더 경로
+            },
+          },
         ],
       },
     ],
