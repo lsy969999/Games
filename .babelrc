@@ -3,5 +3,10 @@
   "presets": [
     ["@babel/preset-env", { "targets": "defaults" }],
     "@babel/preset-typescript"
-  ]
+  ],
+  // "plugins": [
+  //   "@babel/plugin-proposal-optional-chaining",
+  //   "@babel/plugin-proposal-class-properties",
+  //   ["@babel/plugin-proposal-decorators", { "decoratorsBeforeExport": true }]
+  // ]
 }

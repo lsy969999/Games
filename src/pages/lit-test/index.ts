@@ -1,0 +1,16 @@
+import { LitElement, html, css } from 'lit'
+import {customElement, property} from 'lit/decorators.js'
+import './styles.scss'
+console.log('lit test')
+
+@customElement('simple-greeting')
+export class SimpleGreeting extends LitElement {
+    static styles = css`p {color: blue}`;
+
+    @property() 
+    name = 'Somebody';
+
+    render() {
+        return html`<p>Hello, ${this.name}!</p>`;
+    }
+}
