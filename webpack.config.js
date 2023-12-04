@@ -77,6 +77,7 @@ const projectConfigs = projects.map((project) => ({
       template: `src/pages/${project}/index.html`,
       filename: `index.html`,
       chunks: [project],
+      inject: true,
     }),
   ],
   devServer: {
