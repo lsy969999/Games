@@ -6,9 +6,9 @@ const { merge } = require('webpack-merge');
 // 프로젝트 목록
 const projects = [
   'lsy-test',
-  'dev-raising-lovee',
-  'raising-lovee',
   // 'lit-test',
+  // 'dev-raising-lovee',
+  // 'raising-lovee'
 ];
 
 // 공통 설정

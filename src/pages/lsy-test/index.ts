@@ -71,4 +71,69 @@ function onDragEnd() {
 
 
 let sprite = PIXI.Sprite.from(sampleImage);
-app.stage.addChild(sprite);
+sprite.on('click', ()=>{
+  console.log('good')
+})
+sprite.eventMode = 'static'
+
+app.stage.addChild(sprite); 
+
+
+import santaIdle1 from './assets/sprite/santa/Idle (1).png';
+import santaIdle2 from './assets/sprite/santa/Idle (2).png';
+import santaIdle3 from './assets/sprite/santa/Idle (3).png';
+import santaIdle4 from './assets/sprite/santa/Idle (4).png';
+import santaIdle5 from './assets/sprite/santa/Idle (5).png';
+import santaIdle6 from './assets/sprite/santa/Idle (6).png';
+import santaIdle7 from './assets/sprite/santa/Idle (7).png';
+import santaIdle8 from './assets/sprite/santa/Idle (8).png';
+import santaIdle9 from './assets/sprite/santa/Idle (9).png';
+import santaIdle10 from './assets/sprite/santa/Idle (10).png';
+import santaIdle11 from './assets/sprite/santa/Idle (11).png';
+import santaIdle12 from './assets/sprite/santa/Idle (12).png';
+import santaIdle13 from './assets/sprite/santa/Idle (13).png';
+import santaIdle14 from './assets/sprite/santa/Idle (14).png';
+import santaIdle15 from './assets/sprite/santa/Idle (15).png';
+import santaIdle16 from './assets/sprite/santa/Idle (16).png';
+
+const santaImages = [
+  santaIdle1, santaIdle2, santaIdle3, santaIdle4, santaIdle5, santaIdle6, santaIdle7, santaIdle8,
+  santaIdle9, santaIdle10, santaIdle11, santaIdle12, santaIdle12, santaIdle13, santaIdle14, santaIdle15, santaIdle16
+]
+
+const textureArray = []
+
+for (let i = 0; i < santaImages.length; i++) {
+  const texture = PIXI.Texture.from(santaImages[i])
+  textureArray.push(texture);
+}
+
+const animatedSprite = new PIXI.AnimatedSprite(textureArray);
+animatedSprite.play()
+// app.stage.addChild(animatedSprite); 
+
+
+// 버튼 생성
+const button = new PIXI.Graphics();
+button.beginFill(0x3498db); // 버튼 색상
+button.drawRect(0, 0, 100, 50); // 버튼 크기
+button.endFill();
+button.interactive = true; // 이벤트 활성화
+
+// 버튼에 텍스트 추가
+const buttonText = new PIXI.Text('Click me', {
+  fill: 0xFFFFFF, // 텍스트 색상
+  fontSize: 16, // 텍스트 크기
+  fontWeight: 'bold', // 텍스트 굵기
+});
+buttonText.anchor.set(0.5, 0.5); // 텍스트의 중심을 기준으로 설정
+buttonText.position.set(button.width / 2, button.height / 2); // 텍스트 위치 설정
+button.addChild(buttonText);
+
+// 클릭 이벤트 처리
+button.on('pointerdown', () => {
+  console.log('버튼이 클릭되었습니다!');
+  // buttonText.alpha = 0
+});
+
+app.stage.addChild(button);
