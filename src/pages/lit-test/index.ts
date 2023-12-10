@@ -101,7 +101,7 @@ class CurrnetTime extends HTMLElement {
     start() {
         this.stop();
         this._timer = window.setInterval(()=>{
-            this.innerText = new Date().toLocaleString(this.locale)
+            // this.innerText = new Date().toLocaleString(this.locale)
         }, 1000)
     }
     stop() {

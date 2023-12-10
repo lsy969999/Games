@@ -5,12 +5,6 @@
   "targets": {
     "games-e8218": {
       "hosting": {
-        "dev-raising-lovee": [
-          "dev-raising-lovee"
-        ],
-        "raising-lovee": [
-          "raising-lovee"
-        ],
         "lsy-test": [
           "lsy-test"
         ]
