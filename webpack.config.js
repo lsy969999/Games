@@ -8,7 +8,7 @@ const projects = [
   'lsy-test',
   // 'lit-test',
   // 'dev-raising-lovee',
-  // 'raising-lovee'
+  // 'raising-lovee' 
 ];
 
 // 공통 설정
